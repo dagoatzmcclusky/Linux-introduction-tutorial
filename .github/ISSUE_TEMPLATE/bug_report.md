@@ -8,31 +8,19 @@ assignees: ''
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Expected behavior and tell us what happened in contrast to what you expected**
+
+
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+
 
 **Desktop (please complete the following information):** (you can ignore smartphone category if you use desktop)
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+ - OS: [e.g. iOS]:
+ - Version [e.g. 22]:
 
-**Smartphone (please complete the following information):** (you can ignore desktop category if you use smartphone)
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
 
 **Additional context**
-Add any other context about the problem here.
+
