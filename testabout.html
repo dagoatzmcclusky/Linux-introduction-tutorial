@@ -24,14 +24,17 @@
             padding: 4rem 2rem;
             background-color: #f8f9fa;
             text-align: center;
+            background-image: url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-position: center;
         }
 
         /* About Section */
         .about-section {
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
-            background-color: white;
+            padding: 3rem;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -39,11 +42,38 @@
         .about-section h1 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            color: #198754;
         }
 
         .about-section p {
             font-size: 1.2rem;
             line-height: 1.6;
+            color: #343a40;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .faq-section h2 {
+            font-size: 2.2rem;
+            color: #198754;
+            margin-bottom: 1.5rem;
+        }
+
+        .accordion-button {
+            font-size: 1.2rem;
+            color: #343a40;
+        }
+
+        .accordion-body {
+            font-size: 1.1rem;
             color: #343a40;
         }
 
@@ -61,6 +91,18 @@
             .about-section p {
                 font-size: 1rem;
             }
+            .faq-section {
+                padding: 1.5rem;
+            }
+            .faq-section h2 {
+                font-size: 1.8rem;
+            }
+            .accordion-button {
+                font-size: 1rem;
+            }
+            .accordion-body {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -76,6 +118,18 @@
             .about-section p {
                 font-size: 0.9rem;
             }
+            .faq-section {
+                padding: 1rem;
+            }
+            .faq-section h2 {
+                font-size: 1.6rem;
+            }
+            .accordion-button {
+                font-size: 0.9rem;
+            }
+            .accordion-body {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -90,10 +144,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="test2.html">Home</a>
+                        <a class="nav-link" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
+                        <a class="nav-link" href="oscomparison.html">OS comparison</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="testabout.html">About</a>
@@ -108,8 +162,51 @@
         <div class="about-section">
             <h1>About Us</h1>
             <p>
-                "We are a team of open-source enthusiasts who would love to bring to the world the power of open-source software by delivering high-quality, versatile open-source applications which can be applied in any job sector in the global market. We believe that inclusion is key: everyone has the ability to build and develop your own software, as well as distribute it globally for everyone to use. We strongly support one single fact: software should be built by the people, for the people."
+                "We are a team of open-source enthusiasts who would love to bring to the world the power of open-source software by delivering high-quality, versatile open-source applications which can be applied in any job sector in the global market. We believe that inclusion is key: everyone has the ability to build and develop their own software, as well as distribute it globally for everyone to use. We strongly support one single fact: software should be built by the people, for the people."
             </p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Do we believe in proprietary software?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>No, we believe that open-source software is a fundamental human right.</strong> Since plenty of proprietary software can violate the very basic human rights, including freedom, due to vendor lock-in and slower innovation, it is up to our duty to open our codebase to the rest of the world, one line of code at a time.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Do you think that open-source software has its own flaws?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>They still do have some flaws, but fewer than those in proprietary software.</strong> It is thanks to the open-source codebase that allows everyone to patch code, fix bugs, and add new features way faster than any proprietary software company can do.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Don't open-source software have their own marketing stunts like their proprietary software counterparts?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Many open-source software do have flexible PR tactics.</strong> For example, <strong>Firefox</strong> is being strongly advertised by its parent company Mozilla, and both Red Hat and Canonical do frequently advertise their own Linux distros (RHEL and Ubuntu) to the rest of the world.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

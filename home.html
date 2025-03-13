@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Mainpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #198754;
+            --secondary-color: #3cba8f;
+            --background-color: #f8f9fa;
+            --text-color: #343a40;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem 4rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 2rem;
+        }
+
+        /* Improved Carousel */
+        .carousel-item {
+            transition: transform 0.3s ease-in-out;
+            align-items: center;
+            height: 500px;
+        }
+        .carousel-item:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+        .carousel-caption {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+            padding: 20px;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translateY(-50%);
+        }
+        .carousel-caption h4 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Grid Layout for OS cards */
+        .os-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .os-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: linear-gradient(to bottom right, white, white);
+        }
+        .os-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+        .os-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        /* Improved Typography */
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 2rem 2rem;
+                text-align: center;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .os-grid {
+                grid-template-columns: 1fr;
+            }
+            .carousel-item {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-lg">
+            <a class="navbar-brand" href="#">Operating Systems Guide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oscomparison.html">OS comparison</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testabout.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1>Welcome to our most beloved Operating Systems (OS) comparison guideline!</h1>
+            <p>Explore the wonders of each operating system that works best for your Personal Computer (PC) out there on the market.</p>
+        </div>
+    </div>
+
+    <!-- Carousel Section -->
+    <div id="carouselExampleCaptions" class="carousel slide container" style="max-width: 800px;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2019/09/OPerating-Systems-list.png" alt="Find the OS best for you">
+                <div class="carousel-caption">
+                    <h4>Find the OS best for you</h4>
+                    <p>You'll be shown a description of all desktop OSes which fits best for your needs</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://media.licdn.com/dms/image/v2/D4E12AQHl1VOJmK1BpQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1732313086389?e=2147483647&v=beta&t=bsgsul3FxFjb28bQRF06ADW2Ifc5Py5CZLSuHvGg2RE" alt="All OSes available">
+                <div class="carousel-caption">
+                    <h4>All OSes available</h4>
+                    <p>Windows, MacOS, Linux distributions,... no problem!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.phenompeople.com/CareerConnectResources/VCJVCNGLOBAL/images/OceanCruise-1679658128839.png" alt="Learn more about us">
+                <div class="carousel-caption">
+                    <h4>Learn more about us</h4>
+                    <p>Get to know about our team, crew members, and more!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- OS Grid Section -->
+    <div class="os-grid container">
+        <div class="os-card">
+            <h3>Windows</h3>
+            <p>Discover Microsoft's popular operating system</p>
+            <img src="https://i.pcmag.com/imagery/articles/07jULW1s5eZwbYwAgF4Zhtz-6..v1628259809.jpg" alt="Windows OS">
+        </div>
+        <div class="os-card">
+            <h3>macOS</h3>
+            <p>Explore Apple's macOS experience</p>
+            <img src="https://preview.redd.it/macos-sequoia-running-smoothly-on-my-2017-macbook-air-v0-n0oathdcdnqd1.png?width=1440&format=png&auto=webp&s=47499472c788b7ac5a9ca6703ad492f3990690de" alt="macOS">
+        </div>
+        <div class="os-card">
+            <h3>Linux</h3>
+            <p>Learn about various Linux distributions</p>
+            <img src="https://preview.redd.it/minimal-setup-for-gnome-46-ubuntu-24-04-lts-v0-cegubdixo6kd1.png?width=1920&format=png&auto=webp&s=abb5fd9a13bc9b2dfbadceb0c4b057af420a2392" alt="Linux">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
