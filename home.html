@@ -19,6 +19,8 @@
             color: var(--text-color);
             background-color: var(--background-color);
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         /* Navbar Styles */
@@ -130,60 +132,13 @@
             margin-bottom: 1rem;
         }
 
-        /* Feedback Section */
-        .feedback-section {
-            padding: 4rem 2rem;
-            background-color: var(--background-color);
-            text-align: center;
-        }
-        .feedback-section h2 {
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-        }
-        .feedback-section form {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .feedback-section form input {
-            width: 100%;
-            max-width: 300px;
-            padding: 1rem;
-        }
-        .feedback-section form button {
-            padding: 1rem 2rem;
-        }
-
-        /* Survey Section */
-        .survey-section {
-            padding: 4rem 2rem;
-            background-color: var(--background-color);
-            text-align: center;
-        }
-        .survey-section h2 {
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-        }
-        .survey-section form {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .survey-section form button {
-            padding: 1rem 2rem;
+        /* Footer */
+        footer {
             background-color: var(--primary-color);
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .survey-section form button:hover {
-            background-color: var(--secondary-color);
-        }
-        .survey-section .results {
+            text-align: center;
+            padding: 1rem 0;
             margin-top: 2rem;
-            font-size: 1.2rem;
         }
 
         /* Responsive Design */
@@ -209,6 +164,9 @@
             }
             .os-card img {
                 height: 150px;
+            }
+            .os-card p {
+                font-size: 0.9rem;
             }
         }
 
@@ -254,7 +212,10 @@
                         <a class="nav-link active" href="home.html">Home <i class="fa-solid fa-house"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="oscomparison.html">OS comparison</a>
+                        <a class="nav-link" href="oscomparison.html">OS comparison <i class="fa-solid fa-cube"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommendation.html">Our recommendations <i class="fa-solid fa-check"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="testabout.html">About <i class="fa-solid fa-circle-info"></i></a>
@@ -337,77 +298,10 @@
         </div>
     </div>
 
-    <!-- Survey Section -->
-    <div class="survey-section">
-        <h2>How do you feel about our website?</h2>
-        <form id="surveyForm">
-            <button type="button" class="feedback-button" value="Good">Good</button>
-            <button type="button" class="feedback-button" value="Never mind">Never mind</button>
-            <button type="button" class="feedback-button" value="Bad">Bad</button>
-        </form>
-        <div class="results" id="results">
-            <p>Your choice: <span id="userChoice">None</span></p>
-            <p>Overall Feedback: Good <span id="goodPercentage">0%</span>, Never mind <span id="neverMindPercentage">0%</span>, Bad <span id="badPercentage">0%</span></p>
-        </div>
-    </div>
+    <footer>
+        <p><i class="fa-solid fa-copyright"></i> Copyright, McClusky Minh, 2025.</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const feedbackButtons = document.querySelectorAll('.feedback-button');
-        const userChoiceDisplay = document.getElementById('userChoice');
-        const goodPercentageDisplay = document.getElementById('goodPercentage');
-        const neverMindPercentageDisplay = document.getElementById('neverMindPercentage');
-        const badPercentageDisplay = document.getElementById('badPercentage');
-
-        let goodCount = 0;
-        let neverMindCount = 0;
-        let badCount = 0;
-        let totalCount = 0;
-
-        // Load existing survey data from localStorage
-        const storedData = localStorage.getItem('surveyData');
-        if (storedData) {
-            const { good, neverMind, bad } = JSON.parse(storedData);
-            goodCount = good;
-            neverMindCount = neverMind;
-            badCount = bad;
-            totalCount = goodCount + neverMindCount + badCount;
-            updatePercentages();
-        }
-
-        feedbackButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const feedback = button.value;
-                userChoiceDisplay.textContent = feedback;
-
-                if (feedback === 'Good') {
-                    goodCount++;
-                } else if (feedback === 'Never mind') {
-                    neverMindCount++;
-                } else if (feedback === 'Bad') {
-                    badCount++;
-                }
-
-                totalCount++;
-                updatePercentages();
-                saveSurveyData();
-            });
-        });
-
-        function updatePercentages() {
-            const goodPercentage = (goodCount / totalCount * 100).toFixed(2);
-            const neverMindPercentage = (neverMindCount / totalCount * 100).toFixed(2);
-            const badPercentage = (badCount / totalCount * 100).toFixed(2);
-
-            goodPercentageDisplay.textContent = `${goodPercentage}%`;
-            neverMindPercentageDisplay.textContent = `${neverMindPercentage}%`;
-            badPercentageDisplay.textContent = `${badPercentage}%`;
-        }
-
-        function saveSurveyData() {
-            const data = { good: goodCount, neverMind: neverMindCount, bad: badCount };
-            localStorage.setItem('surveyData', JSON.stringify(data));
-        }
-    </script>
 </body>
 </html>
